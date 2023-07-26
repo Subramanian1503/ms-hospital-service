@@ -1,0 +1,15 @@
+{
+  "name": "ms-hospital-service",
+  "version": "1.0.0",
+  "description": "Hospital service provides inforamtion about doctor, patient and their report",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Subramanian Palanivel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.4.1"
+  }
+}
