@@ -28,7 +28,7 @@ module.exports.create = async (request, response) => {
 
             if (isDoctorWithUname) {
                 return response.status(400).json({
-                    message: error_constants.USER_EXISTS_ALREADY_WITH_USER_NAME
+                    message: constants.USER_EXISTS_ALREADY_WITH_USER_NAME
                 });
             }
 
@@ -74,7 +74,7 @@ module.exports.create = async (request, response) => {
 
         return response.status(500).json({
             message: constants.INTERNAL_SERVER_ERROR,
-        })
+        });
     }
 }
 
