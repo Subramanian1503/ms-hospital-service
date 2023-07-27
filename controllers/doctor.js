@@ -76,7 +76,6 @@ module.exports.create = async (request, response) => {
             message: constants.INTERNAL_SERVER_ERROR,
         })
     }
-
 }
 
 // Method to login the user
