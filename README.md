@@ -4,12 +4,12 @@ Hospital service API provides implementation to perform CRUD operations on docto
 # use
 This application can be used for a doctor to store and reterive patient status and able to get all the reports of a patient
 
-# Used collections
+# used collections
 * Doctors - to create and provide login for a doctor
 * Patients - to create a patient
 * Reports - to create a patient report with required informations like checked doctor and status of the patient
 
-# Implementations involved
+# implementations involved
 * Register doctor with required inputs
 * Login doctor by generating jwt tokens for doctor
 * Register patient with requried inputs
