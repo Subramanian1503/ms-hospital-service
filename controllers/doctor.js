@@ -1,6 +1,13 @@
+// Get Doctor modal to perform CRUD operations in DB
 const Doctor = require("../models/doctor");
+
+// Get constants to be used in the file
 const constants = require("../utils/constants");
+
+// Get bcrypt to hash the password that was provided by the user
 const bcrypt = require("bcrypt");
+
+// Get the jsonwebtoken that needs to be used to generate jwt tokens for user 
 const jwt = require("jsonwebtoken");
 
 
@@ -43,6 +50,7 @@ module.exports.create = async (request, response) => {
                 });
             }
 
+            // hash the password
             const hashPassword = bcrypt.hashSync(password, constants.SALT_ROUND);
 
 
@@ -65,6 +73,7 @@ module.exports.create = async (request, response) => {
             })
         }
 
+        // Send 400 response says that password does not match with confirm password
         return response.status(400).json({
             message: constants.PASWWORD_DOES_NOT_MATCH_WITH_CONFIRM_PASSWORD,
         })
@@ -72,6 +81,7 @@ module.exports.create = async (request, response) => {
     catch (error) {
         console.log(`*** Error occurred while trying to register user in: ${error} ***`);
 
+        // throw 500 response if any error occured which is runtime
         return response.status(500).json({
             message: constants.INTERNAL_SERVER_ERROR,
         });
@@ -124,6 +134,7 @@ module.exports.login_doctor = async (request, response) => {
     } catch (error) {
         console.log(`*** Error occurred while trying to login doctor: ${error} ***`);
 
+        // throw 500 response if any error occured which is runtime
         return response.status(500).json({
             message: constants.INTERNAL_SERVER_ERROR,
         })

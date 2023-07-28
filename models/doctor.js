@@ -1,5 +1,7 @@
+// Get mongoose library to define schema and modal 
 const mongoose = require("mongoose");
 
+// Define the schema
 const doctorSchema = new mongoose.Schema({
     firstName: {
         type: String,
@@ -30,6 +32,8 @@ const doctorSchema = new mongoose.Schema({
     timestamps: true
 });
 
+// Convert the schema into model
 const Doctor = mongoose.model("Doctor", doctorSchema);
 
+// Export the created modal
 module.exports = Doctor;

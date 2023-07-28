@@ -62,6 +62,7 @@ module.exports.create = async (request, response) => {
     catch (error) {
         console.log(`*** Error occurred while trying to create report in: ${error} ***`);
 
+        // throw 500 response if any error occured which is runtime
         return response.status(500).json({
             message: constants.INTERNAL_SERVER_ERROR,
         });
@@ -90,6 +91,7 @@ module.exports.getAllReports = async (request, response) => {
     } catch (error) {
         console.log(`*** Error occurred while trying to get all reports of a patient in: ${error} ***`);
 
+        // throw 500 response if any error occured which is runtime
         return response.status(500).json({
             message: constants.INTERNAL_SERVER_ERROR,
         });
@@ -118,6 +120,7 @@ module.exports.getAllReportsByStatus = async (request, response) => {
     } catch (error) {
         console.log(`*** Error occurred while trying to get all reports of a status in: ${error} ***`);
 
+        // throw 500 response if any error occured which is runtime
         return response.status(500).json({
             message: constants.INTERNAL_SERVER_ERROR,
         });

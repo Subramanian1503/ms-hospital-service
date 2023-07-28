@@ -44,6 +44,7 @@ module.exports.create = async (request, response) => {
 
         console.log(`*** Error occurred while trying to register patient : ${error} ***`);
 
+        // throw 500 response if any error occured which is runtime
         return response.status(500).json({
             message: constants.INTERNAL_SERVER_ERROR,
         })

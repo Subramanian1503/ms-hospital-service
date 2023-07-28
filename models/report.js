@@ -1,5 +1,7 @@
+// Get mongoose library to define schema and modal
 const mongoose = require("mongoose");
 
+// Define the schema
 const reportSchema = new mongoose.Schema({
     patientId: {
         type: mongoose.Types.ObjectId,
@@ -20,6 +22,8 @@ const reportSchema = new mongoose.Schema({
     timestamps: true
 });
 
+// Convert the schema into model
 const Report = mongoose.model("Report", reportSchema);
 
+// Export the created modal
 module.exports = Report;

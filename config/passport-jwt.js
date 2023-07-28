@@ -27,6 +27,8 @@ passport.use(new JWTstrategy(options, (jwtPayLoad, done) => {
             return done(null, false);
         }
     }).catch((error) => {
+
+        // if some runtime error occured log it and pass it to the passport 
         console.log(`*** Error occurred while trying to login user using JWT: ${error} ***`);
         return done(error, false);
     })
