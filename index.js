@@ -7,19 +7,21 @@ const SERVICE_PORT = 8080;
 // Get the express application
 const application = express();
 
+// Initialising the database connection with express applicaton
+const db_config = require("./config/mongoose");
+
+// Initialising the passport JWT authentication configuration with express applicaton
+const passport = require("passport");
+const passport_jwt_config = require("./config/passport-jwt-strategy");
+
+
 // Intialising express application with body parser
 application.use(express.json());
 application.use(express.urlencoded());
 
-// Initialising the database connection with express applicaton
-const db_config = require("./config/mongoose");
-
 // Setting up the main route to the middle ware
 const main_router = require("./routes");
 application.use("/", main_router);
-
-// Initialising the passport JWT authentication configuration with express applicaton
-const passport_jwt_config = require("./config/passport-jwt");
 
 application.listen(SERVICE_PORT, (error) => {
     if (error) {

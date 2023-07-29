@@ -109,11 +109,11 @@ module.exports.login_doctor = async (request, response) => {
             // If yes then generate the jwt token and provide that as response
             const token = jwt.sign({
                 email: requested_doctor.email,
-                id: requested_doctor.id
+                id: requested_doctor._id
             },
-                constants.JWT_SECRET_KEY,
+                "Codeial",
                 {
-                    expiresIn: 60 * 60,
+                    expiresIn: 1000000,
                 }
             );
 
